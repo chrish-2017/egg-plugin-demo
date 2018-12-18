@@ -1,6 +1,6 @@
 {
   "name": "egg-plugin-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "eggPlugin": {
     "name": "pluginDemo",
@@ -26,7 +26,6 @@
     "eslint": "^4.11.0",
     "eslint-config-egg": "^5.1.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "mongodb-memory-server": "^2.6.2",
     "webstorm-disable-index": "^1.2.0"
   },
   "engines": {

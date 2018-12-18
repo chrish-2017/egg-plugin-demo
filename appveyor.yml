@@ -1,18 +1,18 @@
 environment:
-  matrix:
-    - nodejs_version: '8'
-    - nodejs_version: '9'
+  nodejs_version: '10'
 
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm i npminstall && node_modules\.bin\npminstall
+  - ps: '"//registry.npmjs.org/:_authToken=$env:npm_auth_token`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII'
+  - npm whoami
 
 test_script:
   - node --version
   - npm --version
-  - npm run test
+  #- npm run test
 
 build: off
 
-after_deploy:
+on_success:
   - npm publish
